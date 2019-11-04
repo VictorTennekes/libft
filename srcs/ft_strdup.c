@@ -6,7 +6,7 @@
 /*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/31 15:55:15 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/04 13:13:40 by vtenneke      ########   odam.nl         */
+/*   Updated: 2019/11/04 14:47:13 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@
 
 char	*ft_strdup(const char *s1)
 {
-	unsigned char	*block;
-	int				len;
+		int				len;
 	int				i;
 	char			*str;
 
@@ -25,11 +24,10 @@ char	*ft_strdup(const char *s1)
 	i = 0;
 	while (s1[len])
 		len++;
-	if (!(block = (unsigned char*)malloc(len)))
+	if (!(str = (char*)malloc(len + 1)))
 		ENOMEM;
 	else
 	{
-		str = (char*)malloc(len + 1);
 		while (s1[i])
 		{
 			str[i] = s1[i];
