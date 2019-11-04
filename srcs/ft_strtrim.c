@@ -6,7 +6,7 @@
 /*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/01 10:25:54 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/01 14:11:38 by vtenneke      ########   odam.nl         */
+/*   Updated: 2019/11/04 13:03:17 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ char		*ft_strtrim(char const *s1, char const *set)
 	char	*b;
 	char	*e;
 
+	if (s1 == 0)
+		return (NULL);
 	set_len = ft_strlen(set);
 	b = (char*)s1;
 	e = (char*)s1 + ft_strlen(s1) - 1;

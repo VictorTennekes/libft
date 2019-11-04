@@ -6,7 +6,7 @@
 /*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/01 14:27:12 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/04 10:58:05 by vtenneke      ########   odam.nl         */
+/*   Updated: 2019/11/04 13:13:25 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,11 @@ char		**ft_split(char const *s, char c)
 	int		j;
 	int		k;
 
+	if (s == 0)
+		return (NULL);
 	i = 0;
 	j = 0;
-	if (!(words = (char**)ft_calloc(sizeof(char*), ft_count_words(s, c) + 1)))
+	if (!(words = (char**)malloc(ft_count_words(s, c) + 1)))
 		return (NULL);
 	words = (char**)malloc(sizeof(char*) * (ft_count_words(s, c) + 1));
 	while (s[i] != '\0' && j < ft_count_words(s, c))

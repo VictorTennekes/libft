@@ -1,42 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strdup.c                                        :+:    :+:            */
+/*   ft_putstr_fd.c                                     :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/31 15:55:15 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/04 13:13:40 by vtenneke      ########   odam.nl         */
+/*   Created: 2019/11/04 13:18:37 by vtenneke       #+#    #+#                */
+/*   Updated: 2019/11/04 13:25:46 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
-#include <errno.h>
-#include <stdlib.h>
 
-char	*ft_strdup(const char *s1)
+void	ft_putstr_fd(char *s, int fd)
 {
-	unsigned char	*block;
-	int				len;
-	int				i;
-	char			*str;
+	int i;
 
-	len = 0;
 	i = 0;
-	while (s1[len])
-		len++;
-	if (!(block = (unsigned char*)malloc(len)))
-		ENOMEM;
-	else
+	if (s == 0)
+		return ;
+	while (s[i] != '\0')
 	{
-		str = (char*)malloc(len + 1);
-		while (s1[i])
-		{
-			str[i] = s1[i];
-			i++;
-		}
-		str[i] = '\0';
-		return (str);
+		ft_putchar_fd(s[i], fd);
+		i++;
 	}
-	return (0);
 }
