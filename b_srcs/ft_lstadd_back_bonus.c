@@ -1,40 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strdup.c                                        :+:    :+:            */
+/*   ft_lstadd_back_bonus.c                             :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/31 15:55:15 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/04 15:38:25 by vtenneke      ########   odam.nl         */
+/*   Created: 2019/11/04 19:06:38 by vtenneke       #+#    #+#                */
+/*   Updated: 2019/11/04 19:44:34 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <errno.h>
-#include <stdlib.h>
+#include <libft_bonus.h>
 
-char	*ft_strdup(const char *s1)
+void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	int		len;
-	int		i;
-	char	*str;
+	t_list	*tmp;
 
-	len = 0;
-	i = 0;
-	while (s1[len])
-		len++;
-	if (!(str = (char*)malloc(len + 1)))
-		ENOMEM;
-	else
+	tmp = *alst;
+	if (tmp)
 	{
-		while (s1[i])
-		{
-			str[i] = s1[i];
-			i++;
-		}
-		str[i] = '\0';
-		return (str);
+		while (tmp->next)
+			tmp = tmp->next;
+		tmp->next = new;
 	}
-	return (0);
+	else
+		ft_lstadd_front(alst, new);
 }

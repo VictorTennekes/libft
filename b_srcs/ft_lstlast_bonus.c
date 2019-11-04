@@ -1,40 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_strdup.c                                        :+:    :+:            */
+/*   ft_lstlast_bonus.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/31 15:55:15 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/04 15:38:25 by vtenneke      ########   odam.nl         */
+/*   Created: 2019/11/04 19:02:45 by vtenneke       #+#    #+#                */
+/*   Updated: 2019/11/04 19:06:01 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
-#include <errno.h>
-#include <stdlib.h>
+#include <libft_bonus.h>
 
-char	*ft_strdup(const char *s1)
+t_list	*ft_lstlast(t_list *lst)
 {
-	int		len;
-	int		i;
-	char	*str;
-
-	len = 0;
-	i = 0;
-	while (s1[len])
-		len++;
-	if (!(str = (char*)malloc(len + 1)))
-		ENOMEM;
-	else
+	if (lst)
 	{
-		while (s1[i])
+		while (lst->next)
 		{
-			str[i] = s1[i];
-			i++;
+			lst = lst->next;
 		}
-		str[i] = '\0';
-		return (str);
 	}
-	return (0);
+	return (lst);
 }
