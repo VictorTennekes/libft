@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memccpy.c                                       :+:    :+:            */
+/*   ft_lstclear_bonus.c                                :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/29 14:00:36 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/05 09:58:51 by vtenneke      ########   odam.nl         */
+/*   Created: 2019/11/05 09:06:39 by vtenneke       #+#    #+#                */
+/*   Updated: 2019/11/05 09:18:00 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <libft_bonus.h>
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	size_t			i;
-	char			*ptr;
-	char			*d;
-	const char		*s;
+	t_list *link;
+	t_list *next_link;
 
-	i = 0;
-	ptr = 0;
-	d = dst;
-	s = src;
-	while (i < n)
+	link = *lst;
+	while (link)
 	{
-		d[i] = s[i];
-		if ((unsigned char)s[i] == (unsigned char)c)
-		{
-			ptr = &d[i + 1];
-			break ;
-		}
-		i++;
+		next_link = link->next;
+		del(link->content);
+		free(link);
+		link = next_link;
 	}
-	return (ptr);
+	*lst = NULL;
 }

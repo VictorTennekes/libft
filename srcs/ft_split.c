@@ -6,7 +6,7 @@
 /*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/01 14:27:12 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/04 15:19:39 by vtenneke      ########   odam.nl         */
+/*   Updated: 2019/11/05 11:34:01 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,8 @@ char		**ft_split(char const *s, char c)
 
 	if (s == 0)
 		return (NULL);
-	if (!(words = (char**)malloc(ft_count_words(s, c) + 1)))
+	if (!(words = (char**)malloc(sizeof(char*) * (ft_count_words(s, c) + 1))))
 		return (NULL);
-	words = (char**)malloc(sizeof(char*) * (ft_count_words(s, c) + 1));
 	ft_gridfill(s, c, words);
 	return (words);
 }

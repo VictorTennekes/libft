@@ -1,37 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memccpy.c                                       :+:    :+:            */
+/*   ft_lstiter_bonus.c                                 :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/29 14:00:36 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/05 09:58:51 by vtenneke      ########   odam.nl         */
+/*   Created: 2019/11/05 08:43:39 by vtenneke       #+#    #+#                */
+/*   Updated: 2019/11/05 08:57:27 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <libft_bonus.h>
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+void	ft_lstiter(t_list *lst, void (*f)(void*))
 {
-	size_t			i;
-	char			*ptr;
-	char			*d;
-	const char		*s;
-
-	i = 0;
-	ptr = 0;
-	d = dst;
-	s = src;
-	while (i < n)
+	if (lst == 0)
+		return ;
+	while (lst)
 	{
-		d[i] = s[i];
-		if ((unsigned char)s[i] == (unsigned char)c)
-		{
-			ptr = &d[i + 1];
-			break ;
-		}
-		i++;
+		f(lst->content);
+		lst = lst->next;
 	}
-	return (ptr);
 }

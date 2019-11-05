@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        ::::::::            */
-/*   ft_memccpy.c                                       :+:    :+:            */
+/*   ft_lstmap_bonus.c                                  :+:    :+:            */
 /*                                                     +:+                    */
 /*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/29 14:00:36 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/05 09:58:51 by vtenneke      ########   odam.nl         */
+/*   Created: 2019/11/05 09:19:45 by vtenneke       #+#    #+#                */
+/*   Updated: 2019/11/05 11:23:02 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include <libft_bonus.h>
 
-void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void*))
 {
-	size_t			i;
-	char			*ptr;
-	char			*d;
-	const char		*s;
+	t_list	*res;
+	t_list	*new;
+	void	*content;
 
-	i = 0;
-	ptr = 0;
-	d = dst;
-	s = src;
-	while (i < n)
+	if (lst == 0)
+		return (NULL);
+	res = NULL;
+	while (lst)
 	{
-		d[i] = s[i];
-		if ((unsigned char)s[i] == (unsigned char)c)
-		{
-			ptr = &d[i + 1];
-			break ;
-		}
-		i++;
+		content = f(lst);
+		if (!content)
+			del(lst);
+		new = ft_lstnew(content);
+		ft_lstadd_back(&res, new);
+		lst = lst->next;
 	}
-	return (ptr);
+	return (res);
 }
