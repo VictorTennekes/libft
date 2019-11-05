@@ -6,7 +6,7 @@
 #    By: vtenneke <vtenneke@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 11:08:29 by vtenneke       #+#    #+#                 #
-#    Updated: 2019/11/05 13:35:20 by vtenneke      ########   odam.nl          #
+#    Updated: 2019/11/05 16:26:00 by vtenneke      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,4 +65,3 @@ bonus: $(OFILES) $(BOFILES) $(NAME)
 	@ar rc $(NAME) $(OFILES) $(BOFILES)
 	@ranlib $(NAME)
 	@echo "$(GREEN)Done"
-	
