@@ -6,7 +6,7 @@
 /*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/01 09:46:05 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/04 14:06:32 by vtenneke      ########   odam.nl         */
+/*   Updated: 2019/11/05 14:10:31 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ static char		*ft_dubcpy(char *dest, char const *s1, char const *s2, size_t k)
 
 char			*ft_strjoin(char const *s1, char const *s2)
 {
-	void	*block;
 	char	*dest;
 	size_t	i;
 	size_t	k;
@@ -64,9 +63,9 @@ char			*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	k = 0;
 	i = ft_dubstrlen(s1, s2);
-	if (!(block = (void*)malloc(i + 1)))
-		return (NULL);
 	dest = (char*)malloc(i + 1);
+	if (!(dest))
+		return (NULL);
 	i = 0;
 	ft_dubcpy(dest, s1, s2, k);
 	return (dest);

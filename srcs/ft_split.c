@@ -6,7 +6,7 @@
 /*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/01 14:27:12 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/05 11:34:01 by vtenneke      ########   odam.nl         */
+/*   Updated: 2019/11/05 14:10:31 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,10 +75,15 @@ static char	**ft_gridfill(char const *s, char c, char **words)
 		k = 0;
 		while (s[i] == c)
 			i++;
-		if (!(words[j] = (char*)malloc(sizeof(char) * ft_wordlen(s, i, c) + 1)))
+		words[j] = (char*)malloc(sizeof(char) * ft_wordlen(s, i, c) + 1);
+		if (!(words[j]))
 			return (fremashin(j, words));
 		while (s[i] != c && s[i] != '\0')
-			words[j][k++] = s[i++];
+		{
+			words[j][k] = s[i];
+			k++;
+			i++;
+		}
 		words[j][k] = '\0';
 		j++;
 	}
@@ -92,7 +97,8 @@ char		**ft_split(char const *s, char c)
 
 	if (s == 0)
 		return (NULL);
-	if (!(words = (char**)malloc(sizeof(char*) * (ft_count_words(s, c) + 1))))
+	words = (char**)malloc(sizeof(char*) * (ft_count_words(s, c) + 1));
+	if (!(words))
 		return (NULL);
 	ft_gridfill(s, c, words);
 	return (words);

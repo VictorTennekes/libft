@@ -6,7 +6,7 @@
 /*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/04 11:07:00 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/05 11:31:46 by vtenneke      ########   odam.nl         */
+/*   Updated: 2019/11/05 14:10:31 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		return (NULL);
 	i = 0;
 	len = ft_strlen(s);
-	if (!(res = (char*)malloc(len + 1)))
+	res = (char*)malloc(len + 1);
+	if (!(res))
 		return (NULL);
 	while (s[i] != '\0')
 	{

@@ -6,7 +6,7 @@
 /*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/04 08:35:56 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/04 14:22:58 by vtenneke      ########   odam.nl         */
+/*   Updated: 2019/11/05 14:10:31 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,12 +58,26 @@ static char	*ft_exception(int n)
 	return (res);
 }
 
+static char	*ft_solve(int tmp, int n, int num_len, char *res)
+{
+	int i;
+
+	i = -1;
+	while (i + 1 < tmp)
+	{
+		i++;
+		res[num_len - i - 1] = (char)(n % 10 + '0');
+		n /= 10;
+	}
+	return (res);
+}
+
 char		*ft_itoa(int n)
 {
 	char	*res;
 	int		num_len;
 	int		sign;
-	int		i;
+	int		tmp;
 
 	sign = n < 0;
 	num_len = ft_numlen(n);
@@ -77,11 +91,7 @@ char		*ft_itoa(int n)
 		*res = '-';
 		n *= -1;
 	}
-	i = -1;
-	while (++i < num_len - sign)
-	{
-		res[num_len - i - 1] = (char)(n % 10 + '0');
-		n /= 10;
-	}
+	tmp = num_len - sign;
+	ft_solve(tmp, n, num_len, res);
 	return (res);
 }

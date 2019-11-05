@@ -6,7 +6,7 @@
 /*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/31 15:55:15 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/04 15:38:25 by vtenneke      ########   odam.nl         */
+/*   Updated: 2019/11/05 14:10:31 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ char	*ft_strdup(const char *s1)
 	i = 0;
 	while (s1[len])
 		len++;
-	if (!(str = (char*)malloc(len + 1)))
+	str = (char*)malloc(len + 1);
+	if (!(str))
 		ENOMEM;
 	else
 	{
