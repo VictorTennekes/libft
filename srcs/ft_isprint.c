@@ -6,9 +6,11 @@
 /*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 15:41:03 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/10/28 16:36:33 by vtenneke      ########   odam.nl         */
+/*   Updated: 2019/11/05 16:47:20 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 int		ft_isprint(int c)
 {

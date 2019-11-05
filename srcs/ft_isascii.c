@@ -6,9 +6,11 @@
 /*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 15:38:07 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/10/28 15:38:45 by vtenneke      ########   odam.nl         */
+/*   Updated: 2019/11/05 16:47:13 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <libft.h>
 
 int		ft_isascii(int c)
 {
