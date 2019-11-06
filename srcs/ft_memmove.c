@@ -6,20 +6,16 @@
 /*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 15:11:09 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/05 14:10:31 by vtenneke      ########   odam.nl         */
+/*   Updated: 2019/11/06 15:07:52 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	ft_movehelper(unsigned char *res, const unsigned char *str, size_t len)
 {
-	size_t				i;
-	unsigned char		*res;
-	const unsigned char	*str;
+	size_t i;
 
-	res = dst;
-	str = src;
 	if (res < str)
 	{
 		i = 0;
@@ -38,5 +34,18 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 			i--;
 		}
 	}
+}
+
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	unsigned char		*res;
+	const unsigned char	*str;
+
+	if (!(src) && !(dst))
+		return ((void*)0);
+	res = dst;
+	str = src;
+	ft_movehelper(res, str, len);
 	return (dst);
 }
+
