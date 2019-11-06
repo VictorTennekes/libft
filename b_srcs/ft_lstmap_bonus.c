@@ -6,7 +6,7 @@
 /*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/05 09:19:45 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/05 14:10:44 by vtenneke      ########   odam.nl         */
+/*   Updated: 2019/11/06 10:42:18 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void*), void (*del)(void*))
 	void	*content;
 
 	if (lst == 0)
-		return (NULL);
-	res = NULL;
+		return (0);
+	res = 0;
 	while (lst)
 	{
 		content = f(lst);

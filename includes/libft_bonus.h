@@ -6,13 +6,12 @@
 /*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/04 17:03:11 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/05 11:46:59 by vtenneke      ########   odam.nl         */
+/*   Updated: 2019/11/06 10:41:45 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_BONUS_H
 # define LIBFT_BONUS_H
-# include <stdlib.h>
 
 typedef	struct		s_list
 {
