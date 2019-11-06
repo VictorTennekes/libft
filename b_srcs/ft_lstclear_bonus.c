@@ -6,7 +6,7 @@
 /*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/05 09:06:39 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/06 10:42:03 by vtenneke      ########   odam.nl         */
+/*   Updated: 2019/11/06 14:05:04 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 	t_list *link;
 	t_list *next_link;
 
+	if (!(*lst))
+		return ;
 	link = *lst;
 	while (link)
 	{
