@@ -6,7 +6,7 @@
 /*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/04 08:35:56 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/05 14:10:31 by vtenneke      ########   odam.nl         */
+/*   Updated: 2019/11/06 11:04:00 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,24 +15,24 @@
 
 static int	ft_numlen(int n)
 {
-	int		res;
+	int		len;
 
-	res = 0;
+	len = 0;
 	if (n == 0)
 		return (1);
 	if (n == -2147483648)
 		return (11);
 	if (n < 0)
 	{
-		res++;
+		len++;
 		n *= -1;
 	}
 	while (n > 0)
 	{
 		n /= 10;
-		res++;
+		len++;
 	}
-	return (res);
+	return (len);
 }
 
 char		*ft_allocmem(int len)
