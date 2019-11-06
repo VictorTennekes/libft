@@ -6,7 +6,7 @@
 /*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/29 13:41:31 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/05 14:10:31 by vtenneke      ########   odam.nl         */
+/*   Updated: 2019/11/06 12:40:51 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,6 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 	str = src;
 	if (src == NULL && dst == NULL)
 		return (NULL);
-	if (src == NULL || dst == NULL)
-		while (i)
-			i++;
 	while (i < n)
 	{
 		res[i] = str[i];
