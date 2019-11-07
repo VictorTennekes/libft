@@ -6,7 +6,7 @@
 /*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/04 08:35:56 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/06 11:04:00 by vtenneke      ########   odam.nl         */
+/*   Updated: 2019/11/07 13:43:27 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ static char	*ft_exception(int n)
 	char	*res;
 
 	res = (char *)malloc((n == 0) ? 2 : 13);
+	if (res == NULL)
+		return (NULL);
 	if (n == 0)
 		ft_strlcpy(res, "0", 2);
 	else

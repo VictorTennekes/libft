@@ -6,7 +6,7 @@
 /*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 14:26:58 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/06 11:08:19 by vtenneke      ########   odam.nl         */
+/*   Updated: 2019/11/07 13:42:59 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static long int		ft_fatoi(const char *str, unsigned long int res, int sign)
 	return (res);
 }
 
-int				ft_atoi(const char *str)
+int					ft_atoi(const char *str)
 {
 	int					sign;
 	unsigned long int	res;

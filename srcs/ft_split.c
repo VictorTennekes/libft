@@ -6,7 +6,7 @@
 /*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/01 14:27:12 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/05 14:10:31 by vtenneke      ########   odam.nl         */
+/*   Updated: 2019/11/07 13:44:50 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ static void	*fremashin(int j, char **words)
 {
 	while (j != 0)
 	{
-		free(words[j]);
 		j--;
+		free(words[j]);
 	}
 	free(words);
 	return (NULL);
@@ -33,7 +33,7 @@ static int	ft_count_words(char const *str, char c)
 	i = 0;
 	in_words = 0;
 	count = 0;
-	if (!str)
+	if (!(str))
 		return (0);
 	while (str[i] != '\0')
 	{
@@ -95,10 +95,8 @@ char		**ft_split(char const *s, char c)
 {
 	char	**words;
 
-	if (s == 0)
-		return (NULL);
 	words = (char**)malloc(sizeof(char*) * (ft_count_words(s, c) + 1));
-	if (!(words))
+	if (!(words) || !(s))
 		return (NULL);
 	ft_gridfill(s, c, words);
 	return (words);

@@ -6,7 +6,7 @@
 /*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/01 09:46:05 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/05 14:10:31 by vtenneke      ########   odam.nl         */
+/*   Updated: 2019/11/07 13:45:07 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,14 @@ static size_t	ft_dubstrlen(const char *str1, const char *str2)
 {
 	int len1;
 	int len2;
-	int totlen;
 
 	len1 = 0;
 	len2 = 0;
 	while (str1[len1] != '\0')
-	{
 		len1++;
-	}
 	while (str2[len2] != '\0')
-	{
 		len2++;
-	}
-	totlen = len1 + len2;
-	return (totlen);
+	return (len1 + len2);
 }
 
 static char		*ft_dubcpy(char *dest, char const *s1, char const *s2, size_t k)
