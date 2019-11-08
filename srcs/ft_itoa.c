@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ft_itoa.c                                          :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
+/*   By: vtenneke <vtenneke@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/11/04 08:35:56 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/07 13:43:27 by vtenneke      ########   odam.nl         */
+/*   Updated: 2019/11/08 14:42:12 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	ft_numlen(int n)
 	return (len);
 }
 
-char		*ft_allocmem(int len)
+static char	*ft_allocmem(int len)
 {
 	char *res;
 

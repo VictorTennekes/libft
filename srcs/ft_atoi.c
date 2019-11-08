@@ -3,10 +3,10 @@
 /*                                                        ::::::::            */
 /*   ft_atoi.c                                          :+:    :+:            */
 /*                                                     +:+                    */
-/*   By: vtenneke <vtenneke@student.codam.nl>         +#+                     */
+/*   By: vtenneke <vtenneke@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 14:26:58 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/07 13:42:59 by vtenneke      ########   odam.nl         */
+/*   Updated: 2019/11/08 14:42:12 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
