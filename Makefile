@@ -6,7 +6,7 @@
 #    By: vtenneke <vtenneke@student.codam.nl>         +#+                      #
 #                                                    +#+                       #
 #    Created: 2019/10/29 11:08:29 by vtenneke       #+#    #+#                 #
-#    Updated: 2019/11/08 13:28:32 by vtenneke      ########   odam.nl          #
+#    Updated: 2019/11/11 14:26:25 by vtenneke      ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,11 @@ SRCS		=	ft_atoi ft_isalnum ft_isalpha ft_isascii\
 B_SRCS		=	ft_lstnew_bonus ft_lstadd_front_bonus ft_lstsize_bonus\
 	ft_lstlast_bonus ft_lstadd_back_bonus ft_lstdelone_bonus ft_lstclear_bonus\
 	ft_lstiter_bonus ft_lstmap_bonus
-CFILES		=	$(SRCS:%=%.c)
+CFILES		=	$(SRCS:%=srcs/%.c)
 OFILES		=	$(CFILES:.c=.o)
-BFILES		=	$(B_SRCS:%=%.c)
+BFILES		=	$(B_SRCS:%=b_srcs/%.c)
 BOFILES		=	$(BFILES:.c=.o)
+INCLUDES	=	./includes
 FLAGS		=	-Wall -Werror -Wextra
 
 # COLORS
@@ -47,7 +48,7 @@ $(NAME): $(OFILES)
 
 %.o: %.c
 	@echo "$(CYAN)Compiling:	$(WHITE)$<"
-	@gcc -o $@ -c $< $(FLAGS)
+	@gcc -o $@ -c $< $(FLAGS) -I $(INCLUDES)
 
 clean: clean_b
 	@echo "$(YELLOW)Cleaning..."
