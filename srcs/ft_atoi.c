@@ -6,7 +6,7 @@
 /*   By: vtenneke <vtenneke@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2019/10/28 14:26:58 by vtenneke       #+#    #+#                */
-/*   Updated: 2019/11/08 14:42:12 by vtenneke      ########   odam.nl         */
+/*   Updated: 2019/12/04 13:01:34 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int					ft_atoi(const char *str)
 		sign = -1;
 		str++;
 	}
-	if (*str == '+')
+	else if (*str == '+')
 		str++;
 	res = ft_fatoi(str, res, sign);
 	return (sign * (int)res);
