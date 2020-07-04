@@ -5,7 +5,7 @@
 /*                                                     +:+                    */
 /*   By: vtenneke <vtenneke@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/11/04 08:35:56 by vtenneke       #+#    #+#                */
+/*   Created: 2019/11/04 08:35:56 by vtenneke      #+#    #+#                 */
 /*   Updated: 2019/11/08 14:42:12 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
@@ -33,17 +33,6 @@ static int	ft_numlen(int n)
 		len++;
 	}
 	return (len);
-}
-
-static char	*ft_allocmem(int len)
-{
-	char *res;
-
-	res = (char*)malloc(len);
-	if (res == NULL)
-		return (NULL);
-	res[len - 1] = '\0';
-	return (res);
 }
 
 static char	*ft_exception(int n)
@@ -83,11 +72,11 @@ char		*ft_itoa(int n)
 
 	sign = n < 0;
 	num_len = ft_numlen(n);
-	res = ft_allocmem(num_len + 1);
-	if (res == NULL)
-		return (NULL);
 	if (n == -2147483648 || n == 0)
 		return (ft_exception(n));
+	res = ft_calloc(num_len + 1, 1);
+	if (res == NULL)
+		return (NULL);
 	if (sign)
 	{
 		*res = '-';

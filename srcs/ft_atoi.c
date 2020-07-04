@@ -5,14 +5,14 @@
 /*                                                     +:+                    */
 /*   By: vtenneke <vtenneke@student.42.fr>            +#+                     */
 /*                                                   +#+                      */
-/*   Created: 2019/10/28 14:26:58 by vtenneke       #+#    #+#                */
+/*   Created: 2019/10/28 14:26:58 by vtenneke      #+#    #+#                 */
 /*   Updated: 2019/12/04 13:01:34 by vtenneke      ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-static long int		ft_fatoi(const char *str, unsigned long int res, int sign)
+static long int		ft_edge(const char *str, unsigned long int res, int sign)
 {
 	while (*str >= '0' && *str <= '9')
 	{
@@ -26,7 +26,7 @@ static long int		ft_fatoi(const char *str, unsigned long int res, int sign)
 	return (res);
 }
 
-int					ft_atoi(const char *str)
+int		ft_atoi(const char *str)
 {
 	int					sign;
 	unsigned long int	res;
@@ -35,13 +35,11 @@ int					ft_atoi(const char *str)
 	res = 0;
 	while (*str == 32 || (*str >= 9 && *str <= 13))
 		str++;
-	if (*str == '-')
+	if (*str == '-' || *str == '+')
 	{
-		sign = -1;
+		sign = *str == '-' ? -1 : 1;
 		str++;
 	}
-	else if (*str == '+')
-		str++;
-	res = ft_fatoi(str, res, sign);
+	res = ft_edge(str, res, sign);
 	return (sign * (int)res);
 }
